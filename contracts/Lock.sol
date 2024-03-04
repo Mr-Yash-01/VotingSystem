@@ -2,16 +2,17 @@
 pragma solidity ^0.8.24;
 
 contract Lock {
-    uint public value;
+    string private greeting;
 
-    event IncrementedValue(uint newValue);
-
-    constructor(uint _initialValue) {
-        value = _initialValue;
+    constructor(string memory _greeting){
+        greeting = _greeting;
     }
 
-    function incrementValue() public {
-        value += 1;
-        emit IncrementedValue(value);
+    function greet() public view  returns (string memory) {
+        return greeting;
+    }
+
+    function setGreeting(string memory _greeting) public{
+        greeting = _greeting;
     }
 }
