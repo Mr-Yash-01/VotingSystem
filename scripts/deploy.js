@@ -8,7 +8,7 @@ const hre = require("hardhat");
 
 async function main() {
 
-  const lock = await hre.ethers.deployContract("Lock", ["goodmorning"]);
+  const lock = await hre.ethers.deployContract("Lock", []);
 
   await lock.deployTransaction.wait();
   
